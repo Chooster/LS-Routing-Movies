@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { getMovie, getMovies } from '../Actions';
+import { getMovie } from '../Actions';
 import { connect } from 'react-redux';
 
 class Movie extends Component {
   componentWillMount(props) {
     this.props.getMovie(this.props.match.params.id);
-    this.props.getMovies();
   }
+
   render() {
-    let movie = this.props.movie.length > 1 ? this.props.movie[this.props.match.params.id] : this.props.movie;
-    console.log(movie);
+    let movie = this.props.movie;
     if (movie.length < 1) return ( <h1> NO ACTOR FOUND MY FROIND </h1>)
     return (
       <div>
@@ -32,8 +31,8 @@ class Movie extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    movie: state.movies
+    movie: state.movie
   }
 };
 
-export default connect(mapStateToProps, { getMovie, getMovies })(Movie);
+export default connect(mapStateToProps, { getMovie })(Movie);

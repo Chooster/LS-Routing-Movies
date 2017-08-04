@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 class MoviesList extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getMovies();
   }
 
@@ -18,7 +18,7 @@ class MoviesList extends Component {
           {this.props.movies.map((item, i) => {
             return (
               <li key={item.id}>
-                <Link to={`/movies/${item.id}`}>{item.title}</Link>
+                <Link to={`/movies/${item.id}`}  >{item.title}</Link>
               </li>
             );
           })}

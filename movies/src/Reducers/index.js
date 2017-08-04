@@ -10,9 +10,18 @@ const moviesReducer = (movies = [], action) => {
   }
 };
 
+const movieReducer = (movies = [], action) => {
+  switch (action.type) {
+    case 'GET_MOVIE':
+      return action.payload.data;
+    default:
+      return movies;
+  }
+}
 
 const rootReducer = combineReducers({
-  movies: moviesReducer
+  movies: moviesReducer,
+  movie: movieReducer
 });
 
 export default rootReducer;
