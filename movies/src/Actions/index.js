@@ -9,6 +9,7 @@ export const getMovies = () => {
 };
 
 export const getMovie = (id) => {
+  console.log(id);
   const promise = axios.get(`http://localhost:5000/movies/${id}`);
   return {
     type: 'GET_MOVIES',

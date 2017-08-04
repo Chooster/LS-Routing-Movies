@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom';
 
 class MoviesList extends Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getMovies();
   }
+
   render() {
     return (
       <div>
