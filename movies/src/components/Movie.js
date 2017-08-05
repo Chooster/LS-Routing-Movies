@@ -13,6 +13,7 @@ class Movie extends Component {
     return (
       <div>
       <p> Title: {movie.title} </p>
+      <p> MetaScore: {movie.metascore} </p>
       <p> Director: {movie.director} </p>
       <p> Actors :
       {movie.stars.map((star, i) => {

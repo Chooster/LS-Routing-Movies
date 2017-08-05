@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <div>
+    <div className='navbar'>
       <Link to="/movies">Home</Link>
-      <Link to="/movies/:id">Movies</Link>
+      <Link to="/new_movie">Add Movie</Link>
     </div>
   );
 };
